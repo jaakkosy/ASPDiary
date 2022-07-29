@@ -2,7 +2,57 @@
     ViewData["Title"] = "Home Page";
 }
 
+<body>
+
+<br/>
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Come here to witness Jaakko's epic coding journey.</p>
+    <h1 class="display-4">Instructions</h1>
+    <p>Please Click the button below to see instructions.</p>
+    <br/>
+    <button onclick="show_hide()">Show and Hide</button>
+    <br/>
+    <br/>
+    <div id="instructions">
+        <ul style="list-style: none;">
+            <li>
+                Remember to log in from the upper right corner of the screen
+            </li>
+            <li>
+                On the topics tab, you can view all topics
+            </li>
+            <li>
+                On the search tab, you can search for topics by its title
+            </li>
+        </ul>
+    </div>
 </div>
+
+<script>
+    var a;
+    function show_hide() {
+        if (a === 1) {
+            document.getElementById("instructions").style.display = "inline";
+            return a = 0;
+        } else {
+            document.getElementById("instructions").style.display = "none";
+            return a = 1;
+        }
+    }
+</script>
+<script>
+    const box = document.getElementById('Id');
+
+    box.addEventListener('mouseover', function handleMouseOver() {
+        box.style.backgroundColor = 'red';
+    });
+
+    box.addEventListener('mouseout', function handleMouseOut() {
+        box.style.backgroundColor = 'BLUE';
+    });
+</script>
+
+</body>
+
+
+
+
