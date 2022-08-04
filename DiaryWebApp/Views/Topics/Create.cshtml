@@ -15,12 +15,12 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Title" class="control-label"></label>
-                <input asp-for="Title" class="form-control" />  
+                <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" onmouseover="testi(this)" onmouseout="testi2(this)" />
+                <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -71,28 +71,14 @@
 }
 
 <script>
-
-    function testi(object) {
-        object.style.backgroundColor = 'red';
-    }
-
-    function testi2(object) {
-        object.style.backgroundColor = 'blue';
-    }
-
-
-    // onmouseout
-    const box = document.getElementsByClassName('form-control')[0];
-
-
-
-// color text on mouseover
-    box.addEventListener('mouseover', function handleMouseOver() {
-        box.style.backgroundColor = 'red';
-    });
-
-// color text on mouseout
-    box.addEventListener('mouseout', function handleMouseOut() {
-        box.style.backgroundColor = 'white';
+    const box = document.querySelectorAll(".form-control");
+    box.forEach(el => {
+        el.addEventListener('mouseover', () => {
+            el.style.backgroundColor = '#e6e6fa'
+        })
+        el.addEventListener('mouseout', () => {
+            el.style.backgroundColor = 'white'
+        })
     });
 </script>
+
